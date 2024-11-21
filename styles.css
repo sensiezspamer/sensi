@@ -1,0 +1,136 @@
+/* Toàn bộ giao diện */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background: #000; /* Để làm nổi bật hiệu ứng */
+}
+
+/* Nền LED đổi màu */
+.background-led {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Đặt phía sau nội dung */
+    background: linear-gradient(45deg, #ff0000, #ff7300, #00ff00, #007bff, #ff00ff, #ff0000);
+    background-size: 400% 400%;
+    animation: led-animation 8s infinite; /* Hiệu ứng LED mượt */
+}
+
+@keyframes led-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Nội dung chính */
+.container {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Đặt phía trên nền */
+    background: rgba(0, 0, 0, 0.7); /* Nền mờ cho nội dung */
+    border: 3px solid; /* Viền đổi màu LED */
+    border-image: linear-gradient(45deg, #ff0000, #00ff00, #007bff, #ff00ff, #ff7300, #ff0000) 1;
+    animation: border-color-animation 10s infinite; /* Viền đổi màu */
+    border-radius: 20px; /* Bo góc mềm mại hơn */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.5); /* Hiệu ứng bóng */
+    max-width: 400px; /* Kích thước nhỏ gọn */
+    margin: 20px auto; /* Căn giữa màn hình */
+}
+
+@keyframes border-color-animation {
+    0% { border-image-source: linear-gradient(45deg, #ff0000, #00ff00, #007bff, #ff00ff, #ff7300, #ff0000); }
+    50% { border-image-source: linear-gradient(45deg, #007bff, #ff00ff, #ff0000, #00ff00, #ff7300, #007bff); }
+    100% { border-image-source: linear-gradient(45deg, #ff0000, #00ff00, #007bff, #ff00ff, #ff7300, #ff0000); }
+}
+
+/* Profile Section */
+.profile {
+    margin-top: 20px;
+}
+
+.profile-img {
+    width: 100px; /* Ảnh nhỏ gọn */
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px #fff;
+    margin-bottom: 15px;
+}
+
+.highlight1 {
+    font-size: 1.8rem; /* Kích thước vừa */
+    font-weight: 700;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.highlight2 {
+    font-size: 1.2rem; /* Giảm kích thước */
+    font-weight: 500;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.highlight3 {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.highlight4 a {
+    color: #ff7300;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.highlight4 a:hover {
+    color: #ffb000;
+    text-shadow: 0 0 10px #ffb000;
+}
+
+/* Links Section */
+.links {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px; /* Nút nhỏ gọn */
+    background: rgba(0, 0, 0, 0.6); /* Nút nền mờ */
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Footer Section */
+footer {
+    margin-top: 30px;
+    font-size: 12px; /* Nhỏ hơn */
+    color: #fff;
+    text-shadow: 0 0 5px #ff7300;
+}
